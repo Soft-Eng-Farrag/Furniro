@@ -1,0 +1,183 @@
+@use "../../../styles/mixins.scss" as *;
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  height: 100px;
+  background-color: white;
+
+  &.scrolled {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .content {
+    padding: 30px 38px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .brand {
+      display: flex;
+      text-decoration: none;
+      color: black;
+      justify-content: center;
+      align-items: center;
+      gap: 2px;
+      .brandLogo {
+        width: 55px;
+        aspect-ratio: 1.55;
+        transform: translateY(-1px);
+        @include sm {
+          width: 50px;
+        }
+        @include xs {
+          width: 45px;
+        }
+        @include xxs {
+          width: 40px;
+        }
+      }
+      .brandName {
+        font-weight: bold;
+        text-transform: capitalize;
+        transform: translateY(2px);
+        transition: all 0.2s ease;
+        font-size: 34px;
+        @include md {
+          font-size: 30px;
+        }
+        @include sm {
+          font-size: 26px;
+          transform: translateY(4px);
+        }
+        @include xs {
+          font-size: 24px;
+          transform: translateY(3px);
+        }
+        @include xxs {
+          font-size: 20px;
+        }
+      }
+    }
+    
+    .links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+  
+      @include md {
+        display: none;
+      }
+  
+      .link {
+        transition: all 0.3s ease;
+        position: relative;
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 10px 15px;
+        z-index: 1;
+  
+        &:hover {
+          color: white;
+        }
+  
+        &::after {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          width: 0;
+          inset: 0;
+          background-color: #b88e2f;
+          transition: 0.3s all ease;
+          border-radius: 5px;
+        }
+        &:hover::after  {
+          width: 100%;
+        }
+      }
+    }
+  
+    .icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      .burgerIcon {
+        background-color: #ccc;
+        transition: all 0.2s ease;
+        display: none;
+        position: relative;
+        font-size: 30px;
+        padding: 5px;
+        border-radius: 50%;
+        stroke-width: 2px;
+        cursor: pointer;
+        @include md {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 28px;
+        }
+        @include xs {
+          font-size: 24px;
+        }
+        &:hover {
+          background-color: #b88e2f;
+          color: white;
+        }
+      }
+      
+      .icon {
+        background-color: #ccc;
+        transition: all 0.2s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 50%;
+        stroke-width: 2px;
+        cursor: pointer;
+        @include md {
+          opacity: 0;
+          font-size: 0;
+          visibility: hidden;
+          position: absolute;
+          z-index: -10000;
+        }
+        &::after {
+          content: attr(data-tooltip);
+          position: absolute;
+          color: white;
+          font-weight: 500;
+          top: -30px;
+          opacity: 0;
+          left: 50%;
+          transition: 0.2s opacity ease;
+          transform: translateX(-50%);
+          background-color: gray;
+          border-radius: 6px;
+          font-size: 12px;
+          padding: 5px 10px;
+        }
+        &:hover {
+          background-color: #b88e2f;
+          color: white;
+        }
+        &:hover::after {
+          opacity: 1;
+        }
+      }
+      .contactIcon {
+        stroke-width: 3px !important;
+      }
+    }
+  }
+}

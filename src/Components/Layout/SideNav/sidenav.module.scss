@@ -1,0 +1,162 @@
+@use '../../../styles/mixins.scss' as * ;
+
+.wrapper{
+    position: relative;
+    top: 0;
+    right: 0;
+    transition: 0.5s transform ease;
+    transform: translateX(100%);
+    width: 320px;
+    text-align: left;
+    padding: 30px;
+    height: 100vh;
+    position: fixed;
+    background-color: #eee;
+    z-index: 7;
+    .brand {
+        padding: 10px 15px;
+        display: flex;
+        text-decoration: none;
+        color: black;
+        justify-content: left;
+        align-items:center;
+        gap: 2px;
+        .brandLogo {
+          width: 55px;
+          aspect-ratio: 1.5;
+          transform: translateY(-1px);
+          @include sm {
+            width: 50px;
+          }
+          @include xs {
+            width: 45px;
+          }
+          @include xxs {
+            width: 40px;
+          }
+        }
+        .brandName {
+          font-weight: bold;
+          text-transform: capitalize;
+          transform: translateY(2px);
+          transition: all 0.2s ease;
+          font-size: 34px;
+          @include md {
+            font-size: 30px;
+            
+          }
+          @include sm {
+            font-size: 26px;
+            transform: translateY(4px);
+          }
+          @include xs {
+            font-size: 24px;
+            transform: translateY(3px);
+          }
+          @include xxs {
+            font-size: 20px;
+          }
+        }
+          
+      }
+    .links {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        gap: 20px;
+    
+        .link {
+          transition: all 0.3s ease;
+          position: relative;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: black;
+          font-weight: 600;
+          font-size: 14px;
+          padding: 10px 15px;
+          z-index: 1;
+    
+          &:hover {
+            color: white;
+          }
+    
+          &::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 0;
+            inset: 0;
+            background-color: #b88e2f;
+            transition: 0.3s all ease;
+            border-radius: 5px;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+        }
+      }
+      .icons {
+        margin-top: 40px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding-left: 10px;
+        gap: 25px;
+        .icon {
+          background-color: #ccc;
+          transition: all 0.2s ease;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          font-size: 20px;
+          padding: 5px;
+          border-radius: 50%;
+          stroke-width: 2px;
+          cursor: pointer;
+          &::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            color: black;
+            font-weight: 500;
+            top: -35px;
+            opacity: 0;
+            left: 50%;
+            transition: 0.2s opacity ease;
+            transform: translateX(-50%);
+            background-color: #ccc;
+            border-radius: 6px;
+            font-size: 12px;
+            padding: 5px;
+          }
+          &:hover {
+            background-color: #b88e2f;
+            color: white;
+          }
+          &:hover::after {
+            opacity: 1;
+          }
+        }
+        .contactIcon {
+          stroke-width: 3px !important;
+        }
+      }
+      .closeIcon {
+        transition: all 0.2s ease;
+        position: absolute;
+        top:30px;
+        right: 30px;
+        font-size: 30px;
+        cursor: pointer;
+        &:hover {
+          color: #b88e2f;
+        }
+      }
+    
+}
+
+.active{
+    transform: translateX(0px);
+}

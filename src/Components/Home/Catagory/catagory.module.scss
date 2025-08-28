@@ -1,0 +1,83 @@
+@use "../../../styles/mixins.scss" as *;
+
+.wrapper {
+  margin-block: 50px;
+  transform: translateY(104px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  h1 {
+    width: fit-content;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 30px;
+    text-transform: capitalize;
+    border-radius: 3px;
+    padding: 10px 20px;
+
+    @include md {
+      font-size: 24px;
+    }
+    @include sm {
+      font-size: 20px;
+    }
+    @include xs {
+      font-size: 18px;
+    }
+    @include xxs {
+      font-size: 16px;
+      margin-top: 12px;
+    }
+  }
+  
+  span {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 40px;
+
+    @include md {
+      font-size: 18px;
+    }
+    @include sm {
+      font-size: 16px;
+    }
+    @include xs {
+      font-size: 14px;
+    }
+    @include xxs {
+      font-size: 12px;
+      margin-top: 12px;
+    }
+  }
+  .types {
+    display: flex;
+    transition: all 0.3s ease;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3vw;
+    .type {
+      width: 25%;
+      min-width: 240px;
+      max-width: 400px;
+      text-align: center;
+
+      img {
+        width: 100%;
+        aspect-ratio: 0.9;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .typeName {
+        text-transform: capitalize;
+        font-weight: bold;
+        margin-top: 20px;
+        font-size: 20px;
+        @include md {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

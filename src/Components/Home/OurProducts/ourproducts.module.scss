@@ -1,0 +1,92 @@
+@use "../../../styles/mixins.scss" as *;
+
+.wrapper {
+  transform: translateY(104px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  h1 {
+    padding: 10px 20px;
+    width: fit-content;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    text-transform: capitalize;
+    @include md {
+      font-size: 24px;
+    }
+    @include sm {
+      font-size: 20px;
+    }
+    @include xs {
+      font-size: 18px;
+    }
+    @include xxs {
+      font-size: 16px;
+      margin-top: 12px;
+    }
+  }
+  .productsGrid {
+    display: flex;
+    transition: all 0.5s ease;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .buttonsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .showMore {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 250px;
+    height: 50px;
+    border: 2px solid #b88e2f;
+    padding: 10px;
+    &:hover {
+      background-color: #b88e2f;
+      p {
+        color: white;
+      }
+      .showIcon {
+        color: white;
+      }
+    }
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+      border-color: #ccc;
+      &:hover {
+        background-color: transparent;
+        p {
+          color: #ccc;
+        }
+        .showIcon {
+          color: #ccc;
+        }
+      }
+    }
+    p {
+      color: #b88e2f;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+    .showIcon {
+      color: #b88e2f;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
