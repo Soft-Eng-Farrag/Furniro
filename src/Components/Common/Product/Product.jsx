@@ -11,7 +11,7 @@ export default function Product({ product }) {
       <div className={`${cls.state} ${discount ? cls.sale : cls.new}`}>
         {discount ? `-${discount}%` : "New"}
       </div>
-      <img className={cls.image} src={`../../../${image}`} alt="product-image" />
+      <img className={cls.image} src={`/${image}`} alt="product-image" />
       <div className={cls.productInfo}>
         <p className={cls.title}>{title}</p>
         <span className={cls.description}>{description}</span>

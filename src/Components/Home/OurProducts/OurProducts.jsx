@@ -15,7 +15,7 @@ export default function OurProducts() {
   useEffect(() => { // here we get the data once component mounts 
     setTimeout(() => {
       axios
-        .get("https://furniro-backend-production-5285.up.railway.app/products")
+        .get("https://furniro-backend-production-1e15.up.railway.app/products")
         .then((res) => {
           console.log(res.data);
 
