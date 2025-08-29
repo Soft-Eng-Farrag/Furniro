@@ -5,8 +5,8 @@ const visibleProducts = [0, 0, 0, 0, 0, 0, 0, 0];
 export default function Loader() {
   return (
     <div className={cls.wrapper}>
-      {visibleProducts.map((product) => (
-        <div className={cls.productShadow} key={product.id}></div>
+      {visibleProducts.map((product , i) => (
+        <div className={cls.productShadow} key={i}></div>
       ))}
     </div>
   );

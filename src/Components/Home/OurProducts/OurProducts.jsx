@@ -36,18 +36,20 @@ export default function OurProducts() {
     setSlice((prevSlice) => prevSlice + 4);
   };
 
-  if (loading) return <Loader />;
+  const Products = visibleProducts.map((product) => (
+          <div className={cls.content} key={product.id}>
+            <Product product={product} />
+          </div>
+        ))
+
+  // if (loading) return <Loader />;
   if (error) return <p>Error : {error}</p>;
 
   return (
     <section className={`${cls.wrapper} ${"container"}`}>
       <h1>our products</h1>
       <div className={cls.productsGrid}>
-        {visibleProducts.map((product) => (
-          <div className={cls.content} key={product.id}>
-            <Product product={product} />
-          </div>
-        ))}
+        {loading ? <Loader /> : Products}
       </div>
       <div className={cls.buttonsContainer}>
         <div
