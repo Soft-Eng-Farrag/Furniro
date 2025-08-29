@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef } from "react";
 import cls from "./sidenav.module.scss";
-import logo from "../../../../public/title-icon.webp";
+import logo from "/title-icon.webp";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react/dist/iconify.js";
 

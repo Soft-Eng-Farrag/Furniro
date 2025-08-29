@@ -1,7 +1,7 @@
 @use "../../../styles/mixins.scss" as *;
 
 .wrapper {
-  background-image: url("../../../../public/header-background.png");
+  background-image: url("/header-background.png");
   transform: translateY(100px);
   background-size: cover;
   background-position: center;

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link, NavLink } from "react-router-dom";
-import brandLogo from "../../../../public/title-icon.webp";
+import brandLogo from "/title-icon.webp";
 import cls from "./nav.module.scss";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import "../../../styles/app.scss";

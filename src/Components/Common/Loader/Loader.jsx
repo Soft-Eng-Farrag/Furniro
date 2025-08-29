@@ -1,11 +1,13 @@
-import cls from './loader.module.scss';
+import cls from "./loader.module.scss";
 
+const visibleProducts = [0, 0, 0, 0, 0, 0, 0, 0];
 
-
-
-export default function Loader(){
-    return <div className={cls.wrapper}>
-        <p className={cls.text}>Loading...</p>
-        <div className={cls.loader}></div>
+export default function Loader() {
+  return (
+    <div className={cls.wrapper}>
+      {visibleProducts.map((product) => (
+        <div className={cls.productShadow} key={product.id}></div>
+      ))}
     </div>
+  );
 }

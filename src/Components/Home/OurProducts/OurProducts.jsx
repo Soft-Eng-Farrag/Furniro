@@ -10,7 +10,7 @@ export default function OurProducts() {
   const [products, setProducts] = useState([]); // state فاضي في البداية
   const [loading, setLoading] = useState(true); // عشان نعرف لو لسه محمّل
   const [error, setError] = useState(null);
-  const [slice, setSlice] = useState(4);
+  const [slice, setSlice] = useState(8);
 
   useEffect(() => { // here we get the data once component mounts 
     setTimeout(() => {
@@ -26,7 +26,7 @@ export default function OurProducts() {
           setError(err.message);
           setLoading(false);
         });
-    }, 2000);
+    }, 1500);
   }, []);
 
   const visibleProducts = products.slice(0, slice);

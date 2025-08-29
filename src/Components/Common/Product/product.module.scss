@@ -27,14 +27,12 @@
     .title {
       font-weight: bold;
       text-transform: capitalize;
-      font-family: "Poppins", sans-serif !important;
       color: #3a3a3a;
       font-size: 16px;
     }
     .description {
       text-transform: capitalize;
       color: #898989;
-      font-family: "Poppins", sans-serif !important;
       display: block;
       margin-top: 10px;
     }
@@ -46,14 +44,14 @@
       gap: 12px;
 
       .newPrice {
-        font-family: "Poppins", sans-serif !important;
+
         font-size: 20px;
         font-weight: bold;
         color: #3a3a3a;
       }
 
       .oldPrice {
-        font-family: "Poppins", sans-serif !important;
+
         font-size: 16px;
         color: #b0b0b0;
         text-decoration: line-through;

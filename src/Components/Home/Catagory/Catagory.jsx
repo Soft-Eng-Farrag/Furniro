@@ -1,8 +1,8 @@
 import '../../../styles/app.scss'
 import cls from './catagory.module.scss'
-import dinning from '../../../../public/dinning.png'
-import living from '../../../../public/bedroom.png'
-import bedroom from '../../../../public/living.png'
+import dinning from '/dinning.png'
+import living from '/bedroom.png'
+import bedroom from '/living.png'
 
 export default function Catagory(){
     return (
