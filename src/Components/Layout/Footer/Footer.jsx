@@ -1,5 +1,10 @@
+import "../../../styles/app.scss";
+import cls from './footer.module.scss';
+
 export default function Footer(){
     return(
-        <h2>Footer</h2>
+        <footer className={cls.wrapper}>
+            <h1>hello</h1>
+        </footer>
     )
 }

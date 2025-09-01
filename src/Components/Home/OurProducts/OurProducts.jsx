@@ -2,7 +2,7 @@ import "../../../styles/app.scss";
 import axios from "axios";
 import cls from "./ourproducts.module.scss";
 import Product from "../../Common/Product/Product.jsx";
-import Loader from '../../Common/Loader/Loader.jsx'
+import Loader from "../../Common/Loader/Loader.jsx";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useState, useEffect } from "react";
 
@@ -12,7 +12,8 @@ export default function OurProducts() {
   const [error, setError] = useState(null);
   const [slice, setSlice] = useState(8);
 
-  useEffect(() => { // here we get the data once component mounts 
+  useEffect(() => {
+    // here we get the data once component mounts
     setTimeout(() => {
       axios
         .get("https://furniro-backend-production-1e15.up.railway.app/products")
@@ -26,7 +27,7 @@ export default function OurProducts() {
           setError(err.message);
           setLoading(false);
         });
-    }, 1500);
+    }, 1000);
   }, []);
 
   const visibleProducts = products.slice(0, slice);
@@ -36,11 +37,9 @@ export default function OurProducts() {
     setSlice((prevSlice) => prevSlice + 4);
   };
 
-  const Products = visibleProducts.map((product) => (
-          <div className={cls.content} key={product.id}>
-            <Product product={product} />
-          </div>
-        ))
+  const Products = visibleProducts.map((product, index) => (
+    <Product i={index} key={product._id} product={product} />
+  ));
 
   // if (loading) return <Loader />;
   if (error) return <p>Error : {error}</p>;
@@ -48,9 +47,7 @@ export default function OurProducts() {
   return (
     <section className={`${cls.wrapper} ${"container"}`}>
       <h1>our products</h1>
-      <div className={cls.productsGrid}>
-        {loading ? <Loader /> : Products}
-      </div>
+      <div className={cls.productsGrid}>{loading ? <Loader /> : Products}</div>
       <div className={cls.buttonsContainer}>
         <div
           className={`${cls.showMore} ${isShowingAll ? cls.disabled : ""}`}

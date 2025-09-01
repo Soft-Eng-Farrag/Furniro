@@ -2,25 +2,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .wrapper {
+  opacity: 0;
+  scale: 0;
+  transition: all 0.3s ease;
   overflow: hidden;
   position: relative;
   background-color: #eee;
-  min-width: 280px;
+  max-width: 280px;
+  animation: popIn 0.5s forwards;
 
   @include xs {
     width: 100%;
   }
 
   &:hover .actions {
-    transform: translateY(-50px);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .likeIcon {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.935);
+    padding: 5px;
+    transition: all 0.5s ease;
+    position: absolute;
+    z-index: 200;
+    top: 15px;
+    left: 15px;
+    opacity: 0;
+    scale: 0;
+    color: #fa003f;
+    width: 30px;
+    height: 30px;
+  }
+
+  .liked {
+    opacity: 1;
+    scale: 1;
   }
 
   .productInfo {
+    overflow: hidden;
     z-index: 200;
     padding: 20px;
     text-align: start;
     position: relative;
-    z-index: 100;
+    z-index: 1000;
     background-color: #eee;
     cursor: pointer;
 
@@ -44,14 +71,12 @@
       gap: 12px;
 
       .newPrice {
-
         font-size: 20px;
         font-weight: bold;
         color: #3a3a3a;
       }
 
       .oldPrice {
-
         font-size: 16px;
         color: #b0b0b0;
         text-decoration: line-through;
@@ -59,13 +84,13 @@
     }
   }
 
- .imageContainer{
-   .image {
-    display: block;
-    width: 100%;
-    object-fit: cover;
+  .imageContainer {
+    .image {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
   }
- }
 
   .state {
     z-index: 2;
@@ -92,18 +117,19 @@
   }
 
   .actions {
-    transition: all 0.5s ease;
-    transform: translateY(100%);
-    z-index: 3;
-    padding: 10px;
+    padding-top: 100px;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 140px;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.4);
-    inset: 0;
-    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.474);
 
     .addtoCart {
       transition: all 0.3s ease;
@@ -150,5 +176,12 @@
         }
       }
     }
+  }
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    scale: 1;
   }
 }

@@ -12,7 +12,7 @@ const router = createBrowserRouter([
       { path: "nav", element: <Navbar /> },
       { path: "shop", element: <div /> },
     ],
-  },
+  }
 ]);
 
 export default router;
