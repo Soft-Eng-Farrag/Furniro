@@ -5,38 +5,66 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import axios from "axios";
 
 export default function Product({ product }) {
-  const [isLiked, setIsLiked] = useState(false);
-  const [wishlistId, setWishlistId] = useState(null);
+  const {
+    title,
+    image,
+    description,
+    newPrice,
+    oldPrice,
+    liked,
+    discount,
+    _id,
+  } = product;
 
-  const { title, image, description, newPrice, oldPrice, discount } = product;
+  const [isLiked, setIsliked] = useState(liked);
 
   const handleAddToWishlist = async () => {
-    console.log(product._id);
+    setIsliked(true);
+    try {
+      const response = await axios.put(
+        `https://furniro-backend-production-1e15.up.railway.app/products/${_id}/liked`,
+        { liked: true } // 👈 true أو false
+      );
 
-    setIsLiked(true);
+      console.log("تم تحديث اللايك:", response.data);
+    } catch (error) {
+      console.error("حصل خطأ أثناء التحديث:", error);
+    }
+
     try {
       const response = await axios.post(
-        "https://furniro-backend-production-1e15.up.railway.app/wishlist",
+        "https://furniro-backend-production-1e15.up.railway.app/productswishlist",
         {
+          prodId: _id,
           title: title,
-          price: newPrice,
           image: image,
+          price: newPrice,
           description: description,
         }
       );
 
       console.log("تمت الإضافة:", response.data);
-      setWishlistId(response.data._id);
     } catch (error) {
       console.error("حصل خطأ:", error);
     }
   };
 
   const handleRemoveFromWishlist = async () => {
-    setIsLiked(false);
+    setIsliked(false);
+    try {
+      const response = await axios.put(
+        `https://furniro-backend-production-1e15.up.railway.app/products/${_id}/liked`,
+        { liked: false } // 👈 true أو false
+      );
+
+      console.log("تم تحديث اللايك:", response.data);
+    } catch (error) {
+      console.error("حصل خطأ أثناء التحديث:", error);
+    }
+
     try {
       const response = await axios.delete(
-        `https://furniro-backend-production-1e15.up.railway.app/wishlist/${wishlistId}`
+        `https://furniro-backend-production-1e15.up.railway.app/productswishlist/${_id}`
       );
       console.log("تم الحذف:", response.data);
 
