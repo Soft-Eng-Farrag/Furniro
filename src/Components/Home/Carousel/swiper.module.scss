@@ -13,40 +13,32 @@
     justify-content: center;
     flex-wrap: wrap;
     .leftsection {
-      width: 25%;
+      width: 35%;
       padding: 40px;
       @include lg {
         width: 100%;
       }
       h1 {
-        font-size: 30px;
-        @include lg {
-          max-width: 1280px;
+        font-size: 45px;
+        @include md{
+          font-size: 40px;
         }
-        @include md {
-          max-width: 994px;
+        @include sm{
+          font-size: 35px;
         }
-        @include sm {
-          max-width: 767px;
-        }
-        @include xs {
-          max-width: 575px;
-        }
-        @include xxs {
-          max-width: 399px;
-        }
-        @include sw {
-          max-width: 320px;
+        @include xxs{
+          font-size: 30px;
         }
       }
 
       p {
-        margin-top: 10px;
+        font-size: 18px;
+        margin-top: 15px;
       }
 
       button {
         transition: all 0.3s ease;
-        margin-block: 15px;
+        margin-top: 30px;
         padding: 10px 20px;
         background-color: #b88e2f;
         border: 2px solid #b88e2f;
