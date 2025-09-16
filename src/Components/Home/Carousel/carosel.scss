@@ -1,0 +1,160 @@
+@use "../../../styles/mixins.scss" as *;
+
+.swiper-slide {
+  background-image: url("/swiper-bg-1.png");
+  transition: all 0.3s ease-in-out;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include sm {
+    width: 100% !important;
+  }
+}
+
+.swiper-slide-active {
+  height: 580px;
+  width: 450px !important;
+  @include lg {
+    width: 550px !important;
+  }
+  @include md {
+    width: 450px !important;
+  }
+  @include sm {
+    width: 100% !important;
+  }
+  .box-wrapper {
+    opacity: 1;
+    visibility: visible;
+    bottom: 60px ;
+  }
+}
+
+.swiper-wrapper {
+  min-height: 580px;
+}
+
+.swiper-pagination {
+  min-height: 50px;
+  background-color: white;
+  width: fit-content !important;
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -1px !important;
+  left: 30% !important;
+
+  @include lg {
+    left: 50% !important;
+  }
+  @include sm {
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+}
+
+.swiper-pagination-bullet {
+  transition: all 0.3s ease;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.swiper-pagination-bullet-active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px !important;
+  height: 25px !important;
+  border: 2px solid #b88e2f;
+  background-color: transparent;
+  border-radius: 50%;
+  &::after {
+    content: "";
+    background-color: #b88e2f;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+  }
+}
+
+.swiper-button-next {
+  right: 30px;
+}
+
+.swiper-button-next::after {
+  font-size: 20px !important;
+  background-color: #b88e2f;
+  border-radius: 50%;
+  padding: 15px 20px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+}
+
+.swiper-button-prev {
+  display: none !important;
+}
+
+.box-wrapper {
+  transition: all 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  position: absolute;
+  bottom: 150px;
+  left: 20px;
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.817);
+    width: 200px;
+    height: 130px;
+    @include sm {
+      width: 180px;
+    }
+    p {
+      text-transform: capitalize;
+      color: #616161;
+    }
+    h4 {
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  }
+  .icon-wrapper {
+    display: flex;
+    align-items: flex-end;
+    .icon {
+      transition: all 0.3s ease;
+      cursor: pointer;
+      padding: 8px;
+      width: 40px;
+      height: 40px;
+      color: white;
+      background-color: #b88e2f;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.817);
+        color: #b88e2f;
+      }
+    }
+  }
+}
+
+.bg-1 {
+  background-image: url("/swiper-bg-1.png");
+}
+.bg-2 {
+  background-image: url("/swiper-bg-2.png");
+}
+.bg-3 {
+  background-image: url("/swiper-bg-3.png");
+}
+.bg-4 {
+  background-image: url("/respira.png");
+}

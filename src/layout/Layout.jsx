@@ -10,7 +10,7 @@ export default function Layout() {
   const handleclose = () => {
     setActive(false);
   };
-  
+
   const handleOpen = () => {
     setActive(true);
   };

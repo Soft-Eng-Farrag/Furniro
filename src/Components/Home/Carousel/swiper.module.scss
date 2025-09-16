@@ -1,0 +1,83 @@
+@use "../../../styles/mixins.scss" as *;
+
+.wrapper {
+  background-color: #fcf8f3;
+  padding-block: 50px;
+  margin-bottom: 200px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px -1px;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .leftsection {
+      width: 25%;
+      padding: 40px;
+      @include lg {
+        width: 100%;
+      }
+      h1 {
+        font-size: 30px;
+        @include lg {
+          max-width: 1280px;
+        }
+        @include md {
+          max-width: 994px;
+        }
+        @include sm {
+          max-width: 767px;
+        }
+        @include xs {
+          max-width: 575px;
+        }
+        @include xxs {
+          max-width: 399px;
+        }
+        @include sw {
+          max-width: 320px;
+        }
+      }
+
+      p {
+        margin-top: 10px;
+      }
+
+      button {
+        transition: all 0.3s ease;
+        margin-block: 15px;
+        padding: 10px 20px;
+        background-color: #b88e2f;
+        border: 2px solid #b88e2f;
+        outline: none;
+        text-transform: capitalize;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        &:hover {
+          background-color: #fcf8f3;
+          color: #b88e2f;
+        }
+      }
+    }
+    .rightsection {
+      margin-top: 20px;
+      padding-inline: 40px;
+      width: 60%;
+      @include lg {
+        width: 100%;
+      }
+      @include xs {
+        padding-inline: 20px;
+      }
+      @include xxs {
+        max-width: 399px;
+      }
+      @include sw {
+        max-width: 320px;
+      }
+    }
+  }
+}
