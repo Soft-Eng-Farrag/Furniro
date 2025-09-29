@@ -61,7 +61,7 @@ export default function SwiperComponent() {
             <SwiperSlide className=" bg-2">
               <div className="box-wrapper">
                 <div className="title">
-                  <p>01 -- bed room</p>
+                  <p>02 -- bed room</p>
                   <h4>inner peace</h4>
                 </div>
                 <div className="icon-wrapper">
@@ -72,7 +72,7 @@ export default function SwiperComponent() {
             <SwiperSlide className=" bg-3">
               <div className="box-wrapper">
                 <div className="title">
-                  <p>01 -- bed room</p>
+                  <p>03 -- bed room</p>
                   <h4>inner peace</h4>
                 </div>
                 <div className="icon-wrapper">
@@ -83,7 +83,7 @@ export default function SwiperComponent() {
             <SwiperSlide className="bg-4">
               <div className="box-wrapper">
                 <div className="title">
-                  <p>01 -- bed room</p>
+                  <p>04 -- bed room</p>
                   <h4>inner peace</h4>
                 </div>
                 <div className="icon-wrapper">
